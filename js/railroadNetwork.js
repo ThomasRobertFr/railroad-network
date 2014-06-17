@@ -69,10 +69,7 @@ function detectVehiculesRec(network, isTerminal, nodes, svg) {
 }
 
 function detectVehiculesQuery(from, to, names, nodes, svg) {
-  console.log("?detectVehicule&from="+JSON.stringify(from)+"&to="+JSON.stringify(to), from, to, names);
-
   d3.json("?detectVehicule&from="+JSON.stringify(from)+"&to="+JSON.stringify(to), function(errors, vehicules) {
-    console.log(vehicules);
     if (vehicules.length > 0) {
 
       vehicules = computePositions(vehicules, names, nodes);
@@ -137,7 +134,6 @@ function computePosition(vehicule, names, nodes) {
 
     if (okBegin && okEnd) {
       progress = computeProgress(vehicule.eta);
-      console.log(names[vehicule.from], xBegin, yBegin, names[vehicule.to], xEnd, yEnd, progress, [xBegin * (1 - progress) + xEnd * progress, yBegin * (1 - progress) + yEnd * progress]);
       vehicule.x = xBegin * (1 - progress) + xEnd * progress;
       vehicule.y = yBegin * (1 - progress) + yEnd * progress;
       vehicule.class = yBegin > yEnd ? "left" : "right";
