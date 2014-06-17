@@ -3,6 +3,8 @@ railroad-network
 
 Very simple web tool to visualize the positions of trams on the network of Rouen.
 
+See demo at: http://tram.thomasrobert.fr
+
 It uses PHP with the graph library by clue, and JavaScript with d3.js for the SVG rendering.
 PHP dependancy is handled with composer.
 
