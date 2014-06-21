@@ -22,17 +22,21 @@ if (isset($_GET['detectVehicule']) && !empty($_GET['from']) && !empty($_GET['to'
 	<title>Railroad Network</title>
 		<meta charset="utf-8" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+		<link rel="icon" type="image/png" href="style/favicon.png" />
 		<link href="style/style.css" rel="stylesheet" />
 	</head>
 	<body>
 		<div id="network"></div>
-		<div id="credits">Thomas Robert - <a href="">Fork me on GitHub</a></div>
+		<div id="desc">
+			<h1>Railroad Network</h1>
+		</div>
+		<div id="credits">Thomas Robert - 2014 - <a href="https://github.com/trobert94/railroad-network"><img src="style/github.png" /></a> <a href="https://github.com/trobert94/railroad-network">Fork me on GitHub</a></div>
 		<script src="js/d3.v3.min.js"></script>
-		<script src="js/railroadNetwork.js"></script>
+		<script src="js/railroadNetwork.js?v2"></script>
 		<script>
 			d3.json("data/stations.json", function (errors, stations) {
 				network = displayNetwork(stations);
-				detectVehicules(stations, network.nodes, network.svg);
+				detectVehicules(stations, network.edges, network.diagonal, network.svg);
 			});
 		</script>
 	</body>

@@ -34,12 +34,45 @@ html, body {
 }
 
 #credits, #credits a, #credits a:hover, #credits a:visited {
-	color: #BBB;
+	color: #777;
 }
 
 #credits {
-	font-weight: 300;		
+	font-weight: 300;
 	position: absolute;
 	bottom: 5px;
 	right: 5px;
+}
+
+#credits img {
+	height: 17px;
+	vertical-align: middle;
+	border: none;
+	text-decoration: none;
+}
+
+#desc {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 38%;
+	text-align: justify;
+	font-size: 95%;
+}
+
+#desc h1 {
+	font-weight: 300;
+	font-size: 200%;
+	font-variant: small-caps;
+	margin: 5px 0;
+}
+
+#desc p {
+	margin: 5px 0;
+}
+
+#desc strong {
+	font-weight: normal;
+	font-size: 130%;
+	font-style: italic;
 }
